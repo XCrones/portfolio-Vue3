@@ -13,7 +13,7 @@ class State {
     {
       service: 'gitHub',
       img: 'github',
-      link: 'https://github.com/XCrones/portfolio-angular-14',
+      link: 'https://github.com/XCrones',
       localLink: 'XCrones',
       nickName: 'XCrones',
     },
