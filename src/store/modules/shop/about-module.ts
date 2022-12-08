@@ -20,7 +20,7 @@ class State {
     },
     {
       title: 'валидация форм',
-      subtitle: ['formGroup', 'validator - (max,min)length, require', 'email'],
+      subtitle: ['Vuelidate', 'validator - (max,min)length, require', 'email'],
     },
     {
       title: 'компоненты магазина',
@@ -36,7 +36,7 @@ class State {
     },
     {
       title: 'что применял',
-      subtitle: ['services', 'directives', 'rxjs'],
+      subtitle: ['vuex', 'directives', 'rxjs'],
     },
   ];
 }

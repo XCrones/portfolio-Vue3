@@ -17,7 +17,7 @@ class State {
     },
     {
       title: 'валидация форм',
-      subtitle: ['formControl', 'validator - (max,min)length, require'],
+      subtitle: ['Vuelidate', 'validator - (max,min)length, require'],
     },
     {
       title: 'реализованы приоритеты',
@@ -39,7 +39,7 @@ class State {
     },
     {
       title: 'что применял',
-      subtitle: ['services', 'directives', 'formControl'],
+      subtitle: ['vuex', 'directives', 'rxjs'],
     },
   ];
 }

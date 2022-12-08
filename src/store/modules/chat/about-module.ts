@@ -33,7 +33,7 @@ class State {
     },
     {
       title: 'что применял',
-      subtitle: ['services', 'pipes', 'rxjs'],
+      subtitle: ['vuex', 'directives', 'rxjs'],
     },
   ];
 }
