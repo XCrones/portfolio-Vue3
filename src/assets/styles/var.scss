@@ -2,6 +2,8 @@ $color-green-neon: #00ff84;
 $color-green-shadow: #1fdb9d;
 $color-red-neon: #ff2121;
 $color-red-shadow: #ff3c00;
+$color-blue-neon: #214aff;
+$color-blue-shadow: #0051ff;
 
 @mixin neon-shadow-text-light($color) {
   text-shadow: 0 0 1px $color, 0 0 1px $color, 0 0 1px $color, 0 0 1px $color, 0 0 1px $color, 0 0 1px $color,

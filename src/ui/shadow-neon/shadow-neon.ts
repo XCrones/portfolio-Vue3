@@ -1,20 +1,28 @@
 export default class ShadowSevice {
-  private _colorNeon = '#00ff84';
-  private _colorShadow = '#0fa';
-  private _colorRedNeon = '#ff2121';
-  private _colorRedShadow = '#ff3c00';
+  private _greenNeon = '#00ff84';
+  private _greenShadow = '#0fa';
+  private _redNeon = '#ff2121';
+  private _redShadow = '#ff3c00';
+  private _blueNeon = '#214aff';
+  private _blueShadow = '#0051ff';
 
   get colorNeonGreen(): string {
-    return this._colorNeon;
+    return this._greenNeon;
   }
   get colorGreen(): string {
-    return this._colorShadow;
+    return this._greenShadow;
   }
-  get colorRedneon(): string {
-    return this._colorRedNeon;
+  get colorRedNeon(): string {
+    return this._redNeon;
   }
   get colorRedShadow(): string {
-    return this._colorRedShadow;
+    return this._redShadow;
+  }
+  get colorBlueNeon(): string {
+    return this._blueNeon;
+  }
+  get colorBlueShadow(): string {
+    return this._blueShadow;
   }
 
   textShadowLight(color: string): string {
@@ -66,6 +74,21 @@ export default class ShadowSevice {
         return this.textShadowHight(color);
       default:
         return 'empty';
+    }
+  }
+
+  getColorProject(frameWork: string): string {
+    const tempFrameWork = frameWork.toLowerCase().trim();
+    switch (tempFrameWork) {
+      case 'angular':
+        return this._redShadow;
+      case 'react':
+        return this._blueShadow;
+      case 'vue':
+        return this._greenShadow;
+
+      default:
+        return '';
     }
   }
 }
