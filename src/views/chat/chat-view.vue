@@ -20,7 +20,7 @@ export default defineComponent({
   data() {
     return {
       metaMenu: {
-        link: 'https://github.com/XCrones/portfolio-angular-14/tree/main/src/app/modules/chat',
+        link: 'https://github.com/XCrones/portfolio-Vue3/tree/main/src/views/chat',
         title: 'chat',
         color: '#00c3ff',
       },

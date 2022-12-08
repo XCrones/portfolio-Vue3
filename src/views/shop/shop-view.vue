@@ -20,7 +20,7 @@ export default defineComponent({
   data() {
     return {
       metaMenu: {
-        link: 'https://github.com/XCrones/portfolio-angular-14/tree/main/src/app/modules/shop',
+        link: 'https://github.com/XCrones/portfolio-Vue3/tree/main/src/views/shop',
         title: 'shop',
         color: '#00c3ff',
       },
