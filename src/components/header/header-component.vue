@@ -1,8 +1,10 @@
 <script lang="ts">
+import { IProjects } from '@/store/modules/header/header-module';
 import { ITextShadow } from '@/ui/directives/text-neon-directive';
 import { defineComponent } from 'vue';
 import { mapActions, mapGetters } from 'vuex';
 import NavigationComponent from '../navigation/navigation-component.vue';
+import ShadowSevice from '@/ui/shadow-neon/shadow-neon';
 
 export default defineComponent({
   name: 'HeaderComponent',
@@ -13,6 +15,7 @@ export default defineComponent({
   data() {
     return {
       isOpenHamburger: false,
+      shadowService: new ShadowSevice(),
     };
   },
   methods: {
@@ -22,11 +25,27 @@ export default defineComponent({
     toggleHamburger() {
       this.isOpenHamburger = !this.isOpenHamburger;
     },
+    isCurrFramework(frameWork: string | undefined): boolean {
+      // eslint-disable-next-line no-extra-boolean-cast
+      return !!frameWork ? this.currFramework.includes(frameWork) : false;
+    },
+    getlink(project: IProjects): string | undefined {
+      return this.isCurrFramework(project.title) ? undefined : project.link;
+    },
+    getColor(frameWork: string): string {
+      return this.shadowService.getColorProject(frameWork);
+    },
   },
   computed: {
     ...mapGetters({
       neon: 'neon/GET_STATE_NEON',
+      projects: 'header/PROJECTS',
+      aboutMe: 'home/ABOUT_ME',
     }),
+    currFramework(): string {
+      return this.aboutMe.frameWork;
+    },
+
     iconNeon(): string {
       return this.neon ? 'lightbulb' : 'lightbulb_outline';
     },
@@ -40,6 +59,12 @@ export default defineComponent({
         isHover: false,
       };
     },
+    colorGreen(): string {
+      return this.shadowService.colorGreen;
+    },
+    colorNeonGreen(): string {
+      return this.shadowService.colorNeonGreen;
+    },
   },
 });
 </script>
@@ -49,9 +74,31 @@ export default defineComponent({
     <div class="h-full w-full flex flex-row justify-between items-center text-white fonts">
       <div
         :class="{ 'title-shadow': neon }"
-        class="flicker transition-all duration-500 tracking-[1px] text-xl md:text-2xl capitalize px-3 py-[2px] border-solid border-2 border-[#00c3ff] rounded-lg"
+        class="project transition-all duration-500 tracking-[1px] text-xl md:text-2xl capitalize px-3 py-[2px] border-solid border-t-2 border-x-2 border-b-2 border-[#00c3ff] rounded-t-lg rounded-b-lg hover:rounded-b-none relative"
       >
-        anydea
+        <div class="project__title flicker transition-all duration-200">anydea</div>
+        <div
+          :class="{ 'title-shadow': neon }"
+          class="project__items absolute top-full left-0 w-full flex flex-col gap-y-2 bg-main-bg border-2 border-solid border-[#00c3ff] rounded-bl-lg rounded-br-lg transition-all duration-200"
+        >
+          <a
+            :href="getlink(project)"
+            v-for="(project, idx) of projects"
+            :key="idx"
+            class="text-center transition-all duration-200"
+            :class="{ 'cursor-not-allowed': isCurrFramework(project.title) }"
+            v-textShadow="{
+              isNeon: this.neon,
+              color: getColor(project.title),
+              colorShadow: getColor(project.title),
+              styleShadow: 'medium',
+              isSetColor: true,
+              isHover: true,
+            }"
+          >
+            {{ project.title }}
+          </a>
+        </div>
       </div>
 
       <div class="flex-auto h-full w-full hidden md:block">
@@ -103,6 +150,26 @@ export default defineComponent({
 </template>
 
 <style scoped lang="scss">
+.project {
+  &:hover {
+    .project__title {
+      opacity: 0;
+    }
+    .project__items {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+
+  &__title {
+  }
+
+  &__items {
+    scale: 0;
+    opacity: 0;
+  }
+}
+
 .material-icons {
   font-size: 25px;
   height: 25px;

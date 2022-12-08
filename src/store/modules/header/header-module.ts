@@ -5,6 +5,11 @@ export interface INavItem {
   title: string;
 }
 
+export interface IProjects {
+  title: string;
+  link: string | undefined;
+}
+
 class State {
   isHide = false;
 
@@ -22,6 +27,21 @@ class State {
       title: 'контакты',
     },
   ];
+
+  projects: IProjects[] = [
+    {
+      title: 'angular',
+      link: 'https://any-dea-angular.web.app',
+    },
+    {
+      title: 'react',
+      link: undefined, //'https://any-dea-react.web.app'
+    },
+    {
+      title: 'vue',
+      link: 'https://anydea-vue.web.app/',
+    },
+  ];
 }
 const getters = <GetterTree<State, any>>{
   ITEMS_NAV(state): INavItem[] {
@@ -29,6 +49,9 @@ const getters = <GetterTree<State, any>>{
   },
   IS_HIDE(state): boolean {
     return state.isHide;
+  },
+  PROJECTS(state): IProjects[] {
+    return state.projects;
   },
 };
 const mutations = <MutationTree<State>>{
