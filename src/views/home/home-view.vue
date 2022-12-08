@@ -16,7 +16,18 @@ export default defineComponent({
       shadowService: new ShadowSevice(),
     };
   },
-  methods: {},
+  methods: {
+    resizePaginator(event: any) {
+      const width = event.target['innerWidth'];
+      if (width != undefined) {
+        if (width < 640) {
+          this.paginatorService.init(3);
+        } else {
+          this.paginatorService.init(6);
+        }
+      }
+    },
+  },
   computed: {
     ...mapGetters({
       neon: 'neon/GET_STATE_NEON',
@@ -42,6 +53,10 @@ export default defineComponent({
   },
   mounted() {
     this.paginatorService.init(6);
+    addEventListener('resize', (event: any) => this.resizePaginator(event), true);
+  },
+  unmounted() {
+    removeEventListener('resize', (event: any) => this.resizePaginator(event), true);
   },
 });
 </script>
