@@ -31,7 +31,6 @@ export default defineComponent({
       v-if="!isHidePorjects"
       class="projects-items h-full w-full flex flex-col md:flex-row justify-center items-center gap-y-5 py-4 md:py-0 md:gap-x-10"
     >
-      <!-- [@showItems]="'source0'" -->
       <router-link
         class="shadow flex flex-col gap-y-8 justify-center items-center border-solid border border-white rounded-2xl pl-16 pr-9 py-16 relative hover:-translate-x-[25%] md:hover:-translate-x-0 md:hover:-translate-y-10 link"
         routerLink="todo"
@@ -48,7 +47,6 @@ export default defineComponent({
         </ul>
         <div class="link__bookmark"></div>
       </router-link>
-      <!-- [@showItems]="'source1'" -->
       <router-link
         class="flex flex-col gap-y-8 justify-center items-center border-solid border border-white rounded-2xl pl-16 pr-9 py-16 relative hover:-translate-x-[25%] md:hover:-translate-x-0 md:hover:-translate-y-10 link"
         :to="{ name: 'shop' }"
@@ -64,7 +62,6 @@ export default defineComponent({
         </ul>
         <div class="link__bookmark"></div>
       </router-link>
-      <!-- [@showItems]="'source2'" -->
       <router-link
         class="flex flex-col gap-y-8 justify-center items-center border-solid border border-white rounded-2xl pl-16 pr-9 py-16 relative hover:-translate-x-[25%] md:hover:-translate-x-0 md:hover:-translate-y-10 link"
         :to="{ name: 'chat' }"
