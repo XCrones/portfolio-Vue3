@@ -37,7 +37,7 @@ export default class App extends Vue {}
 </script>
 
 <template>
-  <div id="app" class="min-h-screen flex flex-col bg-[#1f2738] relative">
+  <div id="app" class="min-h-screen flex flex-col bg-main-bg relative">
     <header v-if="!isHideHeader" class="flex-[0_1_80px] h-full flex">
       <div class="min-h-full min-w-full flex-auto">
         <header-component />
