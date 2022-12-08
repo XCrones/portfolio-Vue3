@@ -1,4 +1,4 @@
-# Портфолио Frontend разработчика [angular](https://anydea-vue.web.app/)
+# Портфолио Frontend разработчика [vue](https://anydea-vue.web.app/)
 
 ## Проекты:
 
@@ -11,7 +11,7 @@
     - статус;
     - сортировка;
   - валидация форм:
-    - formControl;
+    - Vuelidate;
     - validator - (max,min)length;
     - require;
   - реализованы приоритеты.
@@ -24,11 +24,11 @@
     - иконки bootstrap;
     - иконки materialize;
   - что применял :
-    - services;
+    - vuex;
     - directives;
-    - formControl;
+    - rxjs;
 
-  ![TodoList](https://github.com/XCrones/portfolio-Vue3/blob/main/preview/chat.png)
+  ![TodoList](https://github.com/XCrones/portfolio-Vue3/blob/main/preview/todo.png)
 
 - Shop:
 
@@ -38,7 +38,7 @@
     - listner firestore;
   - основано на Fake Store API.
   - валидация форм:
-    - formGroup;
+    - Vuelidate;
     - validator - (max,min)length, require;
     - email;
   - компоненты магазина:
@@ -53,7 +53,7 @@
     - иконки bootstrap;
     - иконки materialize;
   - что применял :
-    - services;
+    - vuex;
     - directives;
     - rxjs;
 
@@ -66,7 +66,7 @@
     - firestore;
     - listner firestore;
   - валидация форм:
-    - formGroup;
+    - Vuelidate;
     - validator - (max,min)length, require;
     - email;
   - компоненты чата:
@@ -80,8 +80,8 @@
   - из стороннего:
     - иконки bootstrap;
   - что применял :
-    - services;
-    - pipes;
+    - vuex;
+    - directives;
     - rxjs;
 
-  ![Fake Shop](https://github.com/XCrones/portfolio-Vue3/blob/main/preview/todo.png)
+  ![Fake Shop](https://github.com/XCrones/portfolio-Vue3/blob/main/preview/chat.png)
