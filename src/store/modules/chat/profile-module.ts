@@ -11,7 +11,7 @@ export interface IMessagesItem {
 
 class State {
   profile$!: Subscription;
-  chats$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>(['chat 1', 'chat 2', 'chat 3']);
+  chats$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
 
   messagesRef$!: Subscription;
   messages$: BehaviorSubject<IMessagesItem[]> = new BehaviorSubject<IMessagesItem[]>([]);
@@ -105,8 +105,7 @@ const actions = <ActionTree<State, any>>{
   },
 
   async SET_CURR_CHAT(context, chat: string) {
-    const tempChat = chat.toLowerCase().trim();
-
+    const tempChat = chat.trim();
     if (!!tempChat && tempChat.length > 0) {
       if (tempChat === context.state.currChat$.value) {
         context.state.currChat$.next(null);
